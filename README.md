@@ -1,0 +1,2 @@
+# smartbin
+Smart Bin Project
