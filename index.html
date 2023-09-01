@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Collection Form</title>
+</head>
+<body>
+  <h1>Data Collection Form</h1>
+  <form id="data-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" required><br>
+    <!-- Remove the date input field -->
+    <label for="option">What Rubish You Throw?</label>
+    <select id="option" required>
+      <option value="Paper">Paper</option>
+      <option value="Metal">Metal</option>
+      <option value="Glass">Glass</option>
+      <option value="Organic">Organic</option>
+      <option value="Others">Others</option>
+    </select><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+  
+  <div id="message" style="display: none;">
+    <p>Congratulations, your data has been submitted!</p>
+    <p>Check out this YouTube video:</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUTUBE_ID" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div id="options" style="display: none;">
+    <p>What would you like to do next?</p>
+    <button type="button" onclick="submitNewData()">Submit New Data</button>
+    <button type="button" onclick="closePage()">Close</button>
+  </div>
+
+  <script>
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var option = document.getElementById("option").value;
+
+      // Get the current date and time in Malaysia format
+      var currentDate = new Date().toLocaleString("en-MY");
+
+      google.script.run.recordData(name, email, phone, currentDate, option);
+      
+      // Hide the form and show the message
+      document.getElementById("data-form").style.display = "none";
+      document.getElementById("message").style.display = "block";
+      document.getElementById("options").style.display = "block";
+    }
+
+    function submitNewData() {
+      // Reset the form and hide the options
+      document.getElementById("data-form").reset();
+      document.getElementById("options").style.display = "none";
+      document.getElementById("data-form").style.display = "block";
+    }
+
+    function closePage() {
+      // Close the current window/tab (Note: This might be blocked by browsers)
+      window.close();
+    }
+  </script>
+</body>
+</html>
