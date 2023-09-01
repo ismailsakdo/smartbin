@@ -1,2 +1,3 @@
-# smartbin
-Smart Bin Project
+# Smart Bin Project - ILKKM Sg Buloh (EHSW) - Pulau Pangkor
+## Project Description
+### 
