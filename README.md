@@ -5,3 +5,4 @@ This is normal bin equip with element of control for analytical measurement of t
 ### Project Flow:
 1) Create the Google Sheet and open the Google App Script
 2) Insert the following [code](https://github.com/ismailsakdo/smartbin/blob/main/code.gs)
+3) Create the index.html and copy this [code](https://github.com/ismailsakdo/smartbin/blob/main/index.html)
